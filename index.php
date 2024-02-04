@@ -1,0 +1,358 @@
+<?php
+    require 'conn.php';
+    $sql = "SELECT * FROM product WHERE p_id BETWEEN 101 AND 104";
+    $result = $conn->query($sql);
+    if(!$result){
+        die("Error : ". $conn->$conn_error);
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kiraku</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+    <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body>
+
+    <div class="preloader-wrapper">
+      <div class="preloader">
+      </div>
+    </div>
+
+    <header id="header">
+      <div id="header-wrap">
+        
+        <nav class="primary-nav padding-small">
+          <div class="container">
+            <div class="row d-flex align-items-center">
+              <div class="col-lg-2 col-md-2">
+                <div class="main-logo">
+                  <a href="index.php">
+                    <img src="images/main-logo.png" alt="logo">
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-10 col-md-10">
+                <div class="navbar">
+
+                  <div id="main-nav" class="stellarnav d-flex justify-content-end right">
+                    <ul class="menu-list">
+
+                      <li class="menu-item has-sub">
+                        <a href="index.php" class="item-anchor active d-flex align-item-center" data-effect="Home">Home</i></a>
+                       
+                      </li>
+
+                      <li><a href="about.html" class="item-anchor" data-effect="About">About</a></li>
+
+                      <li class="menu-item has-sub">
+                        <a href="shop.php" class="item-anchor d-flex align-item-center" data-effect="Shop">Shop</i></a>  
+                      </li>
+
+                      <li class="menu-item has-sub">
+                          <a href="#" class="item-anchor d-flex align-item-center" data-effect="Pages">More<i class="icon icon-chevron-down"></i></a>
+    
+                      <ul class="submenu">
+                        <li><a href="login.php" class="item-anchor">Login<span class="text-primary"></span></a></li>
+                      </ul>
+
+                      <ul class="submenu">
+                        <li><a href="editpfp.php" class="item-anchor">Edit Profile<span class="text-primary"></span></a></li>
+                        <li><a href="logout.php" class="item-anchor">Sign out<span class="text-primary"></span></a></li>
+                      </ul>
+                      </li>
+
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="billboard" class="overflow-hidden">
+
+      <button class="button-prev">
+        <i class="icon icon-chevron-left"></i>
+      </button>
+      <button class="button-next">
+        <i class="icon icon-chevron-right"></i>
+      </button>
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url('https://spice.eplus.jp/images/fkv7d2p89iv80GrwQ0UCMgNz7Mt6LbxTyivG4nDEXq36Hv2ZA6QLk41TZVvzGH3U');background-repeat: no-repeat;background-size: cover;background-position: center;">
+            <div class="banner-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="banner-title">eve</h2>
+                    <p>creating a world in which reality and illusion mirror one another</p>
+                    <div class="btn-wrap">
+                      <a href="shop.php" class="btn btn-light btn-medium d-flex align-items-center" tabindex="0">Shop now <i class="icon icon-arrow-io"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image: url('https://niewmedia.com/wp-content/uploads/2023/11/ZTMY_Asya_Icon_Obenkyou0514-scaled.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
+            <div class="banner-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="banner-title">ZUTOMAYO</h2>
+                    <p> “I wish it was midnight forever.” </p>
+                    <div class="btn-wrap">
+                      <a href="shop.php" class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center" tabindex="0">Shop now <i class="icon icon-arrow-io"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-products" class="product-store padding-large">
+      <div class="container">
+        <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
+          <h2 class="section-title">Featured Products</h2>            
+          <div class="btn-wrap">
+            <a href="shop.html" class="d-flex align-items-center">View all products <i class="icon icon icon-arrow-io"></i></a>
+          </div>            
+        </div>
+        <div class="swiper product-swiper overflow-hidden">
+          
+          <div class="swiper-wrapper">
+                        <?php
+              if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                      $output = "<div class='swiper-slide'>";
+                      $output .= "<div class='product-item'>";
+                      $output .= "<div class='image-holder'>";
+                      $output .= "<img src='" . $row['p_img'] . "' alt='Books' class='product-image'>";
+                      $output .= "</div>";
+                      $output .= "<div class='product-detail'>";
+                      $output .= "<h3 class='product-title'>";
+                      $output .= "<a href='single-product.php?p_id=" . $row['p_id'] . "'>" . $row['p_name'] . "</a>";
+                      $output .= "</h3>";
+                      $output .= "<div class='item-price text-primary'>฿ " . $row['p_price'] . "</div>";
+                      $output .= "</div>";
+                      $output .= "</div>";
+                      $output .= "</div>";
+
+                      echo $output;
+                  }
+              } else {
+                  echo "0 results";
+              }
+              $conn->close();
+              ?>
+
+
+            </div>
+        </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section id="latest-collection">
+      <div class="container">
+        <div class="product-collection row">
+          <div class="col-lg-7 col-md-12 left-content">
+            <div class="collection-item">
+              <div class="products-thumb">
+                <img src="https://natori-theater.com/assets/img/release/img_kanzen.jpg" alt="collection item" class="large-image image-rounded">
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
+                
+                <h3 class="item-title">Theater</h3>
+                <div class="categories">Limited Edition</div>
+                <div class="btn-wrap">
+                  <a href="shop.php" class="d-flex align-items-center">shop<i class="icon icon-arrow-io"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-12 right-content flex-wrap">
+            <div class="collection-item top-item">
+              <div class="products-thumb">
+                <img src="https://s.yimg.com/cl/api/res/1.2/AMQgL0iQIjw3bZp38K6taw--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7aD00OTU7cT04NTtyb3RhdGU9YXV0bzt3PTcwMA--/https://s.yimg.com/ob/image/556d13b0-44f5-410a-bbd7-036d63936a91.jpg" alt="collection item" class="small-image image-rounded">
+              </div>
+              <div class="col-md-6 product-entry">
+          
+                <h3 class="item-title">The Book 2</h3>
+                <div class="btn-wrap">
+                  <a href="shop.php" class="d-flex align-items-center">shop<i class="icon icon-arrow-io"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="collection-item bottom-item">
+              <div class="products-thumb">
+                <img src="https://d.line-scdn.net/obs/r/ect/ect/image_1678278994328907551b57a1461t1144a842" alt="collection item" class="small-image image-rounded">
+              </div>
+              <div class="col-md-6 product-entry">
+
+                <h3 class="item-title">Magic Lantern</h3>
+                <div class="btn-wrap">
+                  <a href="shop.php" class="d-flex align-items-center">shop<i class="icon icon-arrow-io"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-menu-list">
+          <div class="row d-flex flex-wrap justify-content-between">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Ultras</h5>
+                <ul class="menu-list list-unstyled">
+                  <li class="menu-item">
+                    <a href="about.html">About us</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Conditions </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="blog.html">Our Journals</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Careers</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Affiliate Programme</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Ultras Press</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Customer Service</h5>
+                <ul class="menu-list list-unstyled">
+                  <li class="menu-item">
+                    <a href="faqs.html">FAQ</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact.html">Contact</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Returns & Refunds</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Cookie Guidelines</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Delivery Information</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Contact Us</h5>
+                <p>Do you have any questions or suggestions? <a href="#" class="email">ourservices@ultras.com</a>
+                </p>
+                <p>Do you need assistance? Give us a call. <br>
+                  <strong>+57 444 11 00 35</strong>
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Forever 2018</h5>
+                <p>Cras mattis sit ornare in metus eu amet adipiscing enim. Ullamcorper in orci, ultrices integer eget arcu. Consectetur leo dignissim lacus, lacus sagittis dictumst.</p>
+                <div class="social-links">
+                  <ul class="d-flex list-unstyled">
+                    <li>
+                      <a href="#">
+                        <i class="icon icon-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="icon icon-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="icon icon-youtube-play"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="icon icon-behance-square"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </footer>
+
+    <div id="footer-bottom">
+      <div class="container">
+        <div class="d-flex align-items-center flex-wrap justify-content-between">
+            </p>
+          </div>
+          <div class="payment-method">
+            <p>Payment options :</p>
+            <div class="card-wrap">
+              <img src="images/visa-icon.jpg" alt="visa">
+              <img src="images/mastercard.png" alt="mastercard">
+              <img src="images/american-express.jpg" alt="american-express">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
